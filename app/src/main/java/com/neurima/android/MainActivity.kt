@@ -73,11 +73,12 @@ import kotlin.math.sin
 data class Mode(val label: String, val freq: Double, val description: String)
 
 val MODES = listOf(
-    Mode("Delta",  2.0,  "Deep sleep / recovery  0.5–4 Hz"),
-    Mode("Theta",  6.0,  "Creativity / REM  4–8 Hz"),
-    Mode("Alpha",  10.0, "Relaxed focus  8–12 Hz"),
-    Mode("Beta",   20.0, "Alert / active  12–30 Hz"),
-    Mode("Gamma",  40.0, "High cognition  30–80 Hz"),
+    Mode("Delta",  2.0,   "Deep sleep / recovery  0.5–4 Hz"),
+    Mode("Theta",  6.0,   "Creativity / REM  4–8 Hz"),
+    Mode("Alpha",  10.0,  "Relaxed focus  8–12 Hz"),
+    Mode("Beta",   20.0,  "Alert / active  12–30 Hz"),
+    Mode("Gamma",  40.0,  "High cognition  30–80 Hz"),
+    Mode("100 Hz", 100.0, "High-frequency timing  100 Hz"),
 )
 
 class MainActivity : ComponentActivity() {
@@ -199,27 +200,29 @@ fun NeurimaApp() {
                 )
             }
 
-            // Mode selector
+            // Mode selector (3 × 2 grid)
             Text("Mode", style = MaterialTheme.typography.labelLarge)
-            Row(
-                horizontalArrangement = Arrangement.spacedBy(8.dp),
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                MODES.forEach { mode ->
-                    val selected = mode == selectedMode
-                    Button(
-                        onClick = {
-                            selectedMode = mode
-                            applySettings()
-                        },
-                        modifier = Modifier.weight(1f),
-                        shape = RoundedCornerShape(8.dp),
-                        colors = if (selected)
-                            ButtonDefaults.buttonColors()
-                        else
-                            ButtonDefaults.outlinedButtonColors()
-                    ) {
-                        Text(mode.label, fontSize = 11.sp, maxLines = 1)
+            MODES.chunked(3).forEach { row ->
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    row.forEach { mode ->
+                        val selected = mode == selectedMode
+                        Button(
+                            onClick = {
+                                selectedMode = mode
+                                applySettings()
+                            },
+                            modifier = Modifier.weight(1f),
+                            shape = RoundedCornerShape(8.dp),
+                            colors = if (selected)
+                                ButtonDefaults.buttonColors()
+                            else
+                                ButtonDefaults.outlinedButtonColors()
+                        ) {
+                            Text(mode.label, fontSize = 11.sp, maxLines = 1)
+                        }
                     }
                 }
             }
