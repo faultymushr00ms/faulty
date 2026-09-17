@@ -11,11 +11,11 @@ import android.net.Uri
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancelAndJoin
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.nio.ByteBuffer
 import java.nio.ByteOrder
 
 enum class PlayerState { IDLE, PLAYING, PAUSED, STOPPED }
@@ -31,7 +31,8 @@ class NeurimaPlayer(private val context: Context) {
         private set(v) { field = v; onStateChange?.invoke(v) }
 
     private var playJob: Job? = null
-    private val scope = CoroutineScope(Dispatchers.Default)
+    private val scopeJob = SupervisorJob()
+    private val scope = CoroutineScope(Dispatchers.Default + scopeJob)
 
     private var audioTrack: AudioTrack? = null
     private var sourceUri: Uri? = null
@@ -226,5 +227,6 @@ class NeurimaPlayer(private val context: Context) {
 
     fun release() {
         stop()
+        scopeJob.cancel()
     }
 }

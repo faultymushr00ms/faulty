@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Simple waveform icon — two sine-like arcs representing L/R channels -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Left channel arc (solid) -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="4"
+        android:fillColor="@android:color/transparent"
+        android:pathData="M18,54 Q27,34 36,54 Q45,74 54,54 Q63,34 72,54 Q81,74 90,54" />
+
+    <!-- Right channel arc (offset, dashed via shorter segments) -->
+    <path
+        android:strokeColor="#80DEEA"
+        android:strokeWidth="3"
+        android:fillColor="@android:color/transparent"
+        android:pathData="M18,62 Q27,42 36,62 Q45,82 54,62 Q63,42 72,62 Q81,82 90,62" />
+
+</vector>
