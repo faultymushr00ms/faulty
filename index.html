@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Faulty — Digital Musician</title>
+  <meta name="description" content="Faulty — digital musician and computing student. Music, projects, and experiments.">
+  <meta property="og:title" content="Faulty — Digital Musician">
+  <meta property="og:description" content="Music, projects, and experiments.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0b0b10">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <a class="nav__logo" href="#top" aria-label="Faulty home">FAULTY<span class="blink">_</span></a>
+    <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <nav id="nav-links" class="nav__links">
+      <a href="#music">Music</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <p class="mono hero__kicker">// digital musician · computing student</p>
+      <h1 class="glitch" data-text="FAULTY">FAULTY</h1>
+      <p class="hero__lede">Sound made from broken signals, happy accidents, and code.</p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="#music">Listen</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+      <div class="eq" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </section>
+
+    <!-- MUSIC -->
+    <section class="section" id="music">
+      <h2 class="section__title"><span class="mono">01</span> Music</h2>
+      <p class="section__intro">Latest releases and works in progress.</p>
+
+      <div class="grid grid--releases">
+        <!-- TODO: replace each card with a real release. To embed a player,
+             swap the .release__art div for a SoundCloud/Bandcamp/Spotify iframe. -->
+        <article class="card release">
+          <div class="release__art" style="--hue: 340"></div>
+          <div class="release__meta">
+            <h3>Release Title</h3>
+            <p class="mono muted">Single · 2026</p>
+          </div>
+          <a class="card__link" href="#">Listen →</a>
+        </article>
+        <article class="card release">
+          <div class="release__art" style="--hue: 190"></div>
+          <div class="release__meta">
+            <h3>Release Title</h3>
+            <p class="mono muted">EP · 2025</p>
+          </div>
+          <a class="card__link" href="#">Listen →</a>
+        </article>
+        <article class="card release">
+          <div class="release__art" style="--hue: 265"></div>
+          <div class="release__meta">
+            <h3>Work in Progress</h3>
+            <p class="mono muted">Demo · coming soon</p>
+          </div>
+          <span class="card__link muted">Soon</span>
+        </article>
+      </div>
+
+      <!-- TODO: set real profile URLs, delete any platform you don't use -->
+      <ul class="platforms">
+        <li><a href="#">SoundCloud</a></li>
+        <li><a href="#">Bandcamp</a></li>
+        <li><a href="#">Spotify</a></li>
+        <li><a href="#">YouTube</a></li>
+      </ul>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <h2 class="section__title"><span class="mono">02</span> About</h2>
+      <div class="about">
+        <div class="about__text">
+          <!-- TODO: write this in your own voice -->
+          <p>I'm Faulty, a digital musician studying computing online. I make music where production and programming overlap: synths, samples, and whatever tools I can build or break along the way.</p>
+          <p>This site is where I keep my releases, the projects I'm working on, and what I'm learning.</p>
+        </div>
+        <ul class="tags" aria-label="Tools and skills">
+          <!-- TODO: swap in your actual DAW, gear, and languages -->
+          <li>Music Production</li>
+          <li>Sound Design</li>
+          <li>Mixing</li>
+          <li>HTML / CSS / JS</li>
+          <li>Python</li>
+          <li>Creative Coding</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <h2 class="section__title"><span class="mono">03</span> Projects</h2>
+      <p class="section__intro">Code, coursework, and experiments.</p>
+      <div class="grid">
+        <!-- TODO: replace with real projects; link to repos or demos -->
+        <article class="card">
+          <p class="mono muted">web · audio</p>
+          <h3>Project Name</h3>
+          <p>One or two sentences about what it does and what you learned building it.</p>
+          <a class="card__link" href="#">View →</a>
+        </article>
+        <article class="card">
+          <p class="mono muted">coursework</p>
+          <h3>Project Name</h3>
+          <p>One or two sentences about what it does and what you learned building it.</p>
+          <a class="card__link" href="#">View →</a>
+        </article>
+        <article class="card">
+          <p class="mono muted">experiment</p>
+          <h3>This Website</h3>
+          <p>Hand-built with HTML, CSS, and a little JavaScript. Hosted on GitHub Pages.</p>
+          <a class="card__link" href="https://github.com/faultymushr00ms/faulty">Source →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <h2 class="section__title"><span class="mono">04</span> Contact</h2>
+      <p class="section__intro">Collabs, bookings, or just to say hi.</p>
+      <!-- TODO: put in a contact address you're happy to have public -->
+      <a class="contact__email" href="mailto:hello@example.com">hello@example.com</a>
+      <ul class="platforms">
+        <li><a href="https://github.com/faultymushr00ms">GitHub</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">TikTok</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer mono">
+    <span>© <span id="year">2026</span> Faulty</span>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
