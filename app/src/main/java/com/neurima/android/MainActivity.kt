@@ -324,7 +324,7 @@ fun OscillationVisualiser(
         initialValue = 0f,
         targetValue = 1f,
         animationSpec = infiniteRepeatable(
-            animation = tween(durationMs = durationMs, easing = LinearEasing),
+            animation = tween(durationMillis = durationMs, easing = LinearEasing),
             repeatMode = RepeatMode.Restart
         ),
         label = "phase"
